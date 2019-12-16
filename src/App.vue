@@ -175,7 +175,6 @@ export default {
     editingTitle(index) {
       this.notes[index].editingTitle = true;
       this.initValue = this.notes[index].title;
-      console.log(this.initValue);
       document
         .querySelectorAll(".note")
         [index].querySelector("input")
@@ -183,6 +182,7 @@ export default {
     },
     onBlur(index) {
       this.notes[index].editingTitle = false;
+      this.notes[index].date = new Date(Date.now()).toLocaleString();
     },
     onEsc(index) {
       this.notes[index].editingTitle = false;
